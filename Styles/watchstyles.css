@@ -1,0 +1,215 @@
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Share:ital@0;1&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		background: #0E0E0E;
+		margin: 0;
+	}
+	::-webkit-scrollbar {
+  		width: 15px;
+	}
+	::-webkit-scrollbar-track {
+	  	background: #0E0E0E; 
+	}
+	::-webkit-scrollbar-thumb {
+	  	background: #282828; 
+	}
+	::-webkit-scrollbar-thumb:hover {
+	  	background: #555; 
+	}
+	.nav-bar {
+		width: 100%;
+		background: #252525;
+		height: 76px;
+		box-sizing: border-box;
+		border-bottom: 1px solid #0e0d0d;
+	}
+	.nav-bar #logo{
+		display: inline;
+		float: left;
+		height: 70px;
+	}
+	.nav-bar #levo ul {
+		width: auto;
+		height: 100%;
+		margin: 0 auto;
+		list-style: none;
+		font-weight: bold;
+		letter-spacing: 2px;
+		position: relative;
+	}
+	.nav-bar #levo ul a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	.nav-bar #levo ul .li {
+		width: 120px;
+		float: left;
+		padding: 10px 0 10px 0;
+		text-align: center;
+		color: #FFFFFF;
+		padding: 15px 0;
+		margin-top: 10px;
+		margin-right: 10px;
+		transition: 0.2s;
+		text-decoration: none;		
+		font-size: 22px;
+		font-weight: bold;
+		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	}
+	.nav-bar #levo ul .li:hover {
+		background: #CACACA;
+		text-decoration: underline;
+	}
+	.nav-bar #levo ul .li:hover .padajucalista {
+		color: #FFFFFF;
+	}
+	.nav-bar #levo ul .li .padajucalista p:hover {
+		color: #C9C9C9;
+	}
+	.nav-bar #desno {
+		float: right;
+	}
+	.nav-bar #desno img {
+		padding: 0 10px;
+		margin: 10px 0;
+	}
+	.padajucalista {
+		position: absolute;
+		top: 65px;
+		left: 0;
+		width: 700px;
+		height: 230px;
+		background: #252525;
+		transition: 0.2s;
+		padding: 0 40px 45px 40px;
+		box-sizing: border-box;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 1;
+	}
+	.unutra {
+		width: 24%;
+		float: left;
+		margin-right: 1%;
+	}
+	.unutra:last-child {
+		margin-right: 0;
+	}
+	.unutra p {
+		padding: 10px 0;
+		transition: all 0.4 ease;
+	}
+	.nav-bar ul .li:hover .padajucalista {
+		visibility: visible;
+		opacity: 1;
+	}
+	.sve {
+		display: flex;
+		position: relative;
+		font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	}
+	.sve .levo {
+		box-sizing: border-box;
+		position: absolute;
+		width: 200px;
+		height: auto;
+		background: #252525;
+	}
+	.sve .levo ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.sve .levo ul li a{
+		padding: 15px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+		border-top: 1px solid rgba(225, 225, 225, 0.05);
+		text-align: center;
+	}
+	.sve .levo ul li a {
+		text-decoration: none;
+		color: #FFFFFF;
+		display: block;
+	}
+	.sve .levo ul li a:hover {
+		background: #C9C9C9;
+		transition: 0.4s all ease;
+		color: #000000;
+	}
+	.sve .desno {
+		width: 100%;
+		margin-left: 200px;
+	}
+	.sve .desno h1 {
+		text-align: center;
+		margin: 5px 0 0 0;
+		padding: 0;
+	}
+	.sve .desno img {
+		width: 1281px;
+		height: auto;
+	}
+	.sve .desno .zaglavlje {
+		padding: 20px;
+		background: #0E0E0E;
+		color: #FFFFFF;
+		text-align: right;
+	}
+	.sve .desno .tekst {
+		color: #FFFFFF;
+		padding: 0 20px;
+	}
+	.satovi {
+		margin-left: 200px;
+		padding: 10px 150px;
+	}
+	.satovi tr td {
+		text-align: center;
+		color: #FFFFFF;
+		line-height: 130%;
+	}
+	.satovi tr td img {
+		width: 335px;
+		height: auto;
+	}
+	.satovi .slika {
+		margin-top: 25px;
+	}
+    .skorokraj {
+		height: auto;
+		padding: 10px 150px;
+		margin-left: 200px;
+		color: #FFFFFF;
+		font-family: "Source Code Pro", monospace;
+		background: #0E0E0E;
+	}
+	.svestrane {
+		text-align: center;
+		font-size: 16px;
+	}
+	.svestrane a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	.copyright {
+		text-align: right;
+		margin-top: 80px;
+		margin-bottom: 0;
+		font-size: 17px;
+		opacity: 0.8;
+	}
+	.footer {
+		background: #252525;
+		color: #C9C9C9;
+		padding: 4px 0;
+	}
+	.footer img {
+		height: 50px;
+		width: 50px;
+        display: block;
+		margin: 0 auto;
+	}
