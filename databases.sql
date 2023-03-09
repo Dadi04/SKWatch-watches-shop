@@ -1,0 +1,39 @@
+CREATE TABLE watches(
+id INTEGER NOT NUll PRIMARY KEY AUTOINCREMENT, 
+brand TEXT NOT NULL, 
+model TEXT NOT NULL,
+mechanism TEXT NOT NULL, 
+case_material TEXT NOT NULL, 
+strap_material TEXT NOT NULL, 
+functions TEXT NOT NULL, 
+glass TEXT NOT NULL, 
+price REAL NOT NULL, 
+in_stock INTEGER NOT NULL
+);
+
+CREATE TABLE users(
+id INTEGER NOT NUll PRIMARY KEY AUTOINCREMENT, 
+name TEXT NOT NULL, 
+prezime TEXT NOT NULL, 
+email TEXT NOT NULL, 
+password TEXT NOT NULL, 
+day_birth INTEGER NOT NULL, 
+month_birth INTEGER NOT NULL, 
+year_birth INTEGER NOT NULL, 
+starting_money INTEGER NOT NULL
+);
+
+CREATE TABLE transactions(
+id INTEGER NOT NUll PRIMARY KEY AUTOINCREMENT, 
+user_id INTEGER NOT NUll, 
+watch_id INTEGER NOT NUll, 
+amount INTEGER NOT NULL, 
+price INTEGER NOT NULL, 
+type TEXT NOT NULL, 
+total_price INTEGER NOT NULL, 
+date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY(user_id) REFERENCES users(id),
+FOREIGN KEY(watch_id) REFERENCES watches(id)
+);
+
+SELECT * FROM watches;
