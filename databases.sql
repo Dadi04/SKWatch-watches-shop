@@ -37,3 +37,5 @@ FOREIGN KEY(watch_id) REFERENCES watches(id)
 );
 
 SELECT * FROM watches;
+
+SELECT * FROM users;

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
 <title>SKWatch</title>
 </head>
 <body>
 <nav class="nav-bar">
-	<div id="logo"><a href="index.html"><img src="../images/logo.png" alt="logo" height="75px" width="auto"></a></div>
+	<div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
 	<div id="levo">
 		<ul>
 			<a href="index.html"><li class="li">Početna</li></a>
@@ -41,18 +41,18 @@
 		</ul>
 	</div>
 	<div id="desno">
-		<a href=""><img src="../images/kolica.png" alt="shopping_cart" height="50px" width="auto"></a>
-		<a href=""><img src="../images/account.png" alt="account" height="50px" width="auto"></a>
-		<a href=""><img src="../images/logout.png" alt="logout" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/kolica.png') }}" alt="shopping_cart" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/account.png') }}" alt="account" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/logout.png') }}" alt="logout" height="50px" width="auto"></a>
 	</div>
 </nav>
-<video autoplay muted loop width="100%"><source src="../images/rolex.mp4" type="video/mp4"></video>
+<video autoplay muted loop width="100%"><source src="{{ url_for('static', filename='images/rolex.mp4') }}" type="video/mp4"></video>
 <div class="novosti">
 	<h3 class="naslov">Najnovije vesti u svetu satova</h3>
 	<hr>
 	<div class="glavnanovost">
 		<div class="post">
-			<img src="../images/slika1.png" alt="slika1" class="slika1"/>
+			<img src="{{ url_for('static', filename='images/slika1.png') }}" alt="slika1" class="slika1"/>
 			<div class="izgled">
 				<h2>Jaeger-LeCoultre Hybris Mechanica Reverso</h2>
 				<i class="fa fa-user"> David Petković</i>
@@ -64,7 +64,7 @@
 	</div>
   <div class="glavnanovost">
 		<div class="post">
-			<img src="../images/slika2.png" alt="slika2" class="slika2"/>
+			<img src="{{ url_for('static', filename='images/slika2.png') }}" alt="slika2" class="slika2"/>
 			<div class="izgled">
 				<h2>Patek Philippe Nautilus Ref. 5711/1A-014</h2>
 				<i class="fa fa-user"> David Petković</i>
@@ -84,10 +84,10 @@
 	<hr>
 	<table class="izlog">
 		<tr>
-			<td><img src="../images/sat1.png" alt="sat1"></td>
-			<td><img src="../images/sat2.png" alt="sat2"></td>
-			<td><img src="../images/sat3.png" alt="sat3"></td>
-			<td><img src="../images/sat4.png" alt="sat4"></td>
+			<td><img src="{{ url_for('static', filename='images/sat1.png') }}" alt="sat1"></td>
+			<td><img src="{{ url_for('static', filename='images/sat2.png') }}" alt="sat2"></td>
+			<td><img src="{{ url_for('static', filename='images/sat3.png') }}" alt="sat3"></td>
+			<td><img src="{{ url_for('static', filename='images/sat4.png') }}" alt="sat4"></td>
 		</tr>
 		<tr>
 			<td><p><a href="https://www.seikowatches.com/global-en/products/astron/ssh003j1" target="_blank">SEIKO ASTRON SSH003J1</a><br>Najnoviji Seiko Astron je prilicno poseban sat. Original je objavljen 2012. godine, a i značajan je po tome što je bio prvi GPS solarni sat na svetu, što znači da sat može da "razgovara" sa satelitima, osiguravajući trajnu tačnost, a solarne ćelije na brojčaniku osiguravaju trajnu snagu.</p></td>
@@ -98,7 +98,7 @@
 	</table>
 </div>
 <div class="onama">
-	<img src="../images/istorija.png" alt="istorija" width="100%" height="350px">
+	<img src="{{ url_for('static', filename='images/istorija.png') }}" alt="istorija" width="100%" height="350px">
 	<div class="naslovonama"><p>Kako je sve počelo?</p></div>
 	<div class="tekstonama"><p>Iznad svega SKWATCH je priča o emocijama i posvećenosti, a svaka uspešna priča ima svoj početak. SKWATCH je nastao 1990. godine kao rezultat jednog porodičnog sna i vizije da se luksuz učini dostupan svima. Da se od svakodnevice napravi svečanost i da se kreiraju trenuci za pamćenje.<br>
 	<a href="onama.html">Pogledajte još --&gt</a>
@@ -122,7 +122,7 @@
 <footer>
 	<a href="#">
 		<div class="footer">
-			<img src="../images/strelica.png" alt="strelica">
+			<img src="{{ url_for('static', filename='images/strelica.png') }}" alt="strelica">
 		</div>
 	</a>
 </footer>
