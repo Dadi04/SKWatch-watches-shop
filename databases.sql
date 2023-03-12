@@ -8,7 +8,8 @@ strap_material TEXT NOT NULL,
 functions TEXT NOT NULL, 
 glass TEXT NOT NULL, 
 price REAL NOT NULL, 
-in_stock INTEGER NOT NULL
+in_stock INTEGER NOT NULL,
+image BLOB;
 );
 
 CREATE TABLE users(
@@ -38,6 +39,6 @@ FOREIGN KEY(watch_id) REFERENCES watches(id)
 
 SELECT * FROM watches;
 
-SELECT * FROM users;
+SELECT * FROM watches WHERE brand = "ROLEX";
 
-ALTER TABLE watches ADD COLUMN image BLOB;
+SELECT * FROM users;

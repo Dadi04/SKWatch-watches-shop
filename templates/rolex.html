@@ -64,7 +64,7 @@
 	</div>
 	<div class="desno">
 		<div class="zaglavlje">
-			<img src="../images/rolex.jpg" alt="rolex">
+			<img src="{{ url_for('static', filename='images/rolex.jpg') }}" alt="rolex">
 			<h1>Rolex satovi</h1>
 		</div>
 		<div class="tekst">
@@ -74,24 +74,54 @@
 </div> 
 <table class="satovi">
 	<tr>
-		<td><img src="../images/rolex1.webp" alt="rolex1"></td>
-		<td><img src="../images/rolex2.webp" alt="rolex2"></td>
-		<td><img src="../images/rolex3.webp" alt="rolex3"></td>
+		{% for name in encoded_image %}
+			<td>{{ name }}</td>
+		{% endfor %}
 	</tr>
 	<tr>
-		<td>ROLEX OYSTER PERPETUAL 41<br>Materijal - Oystersteel<br>Narukvica - Oysterflex<br>Mehanizam - Automatik<br>Cena - 650835 RSD</td>
-		<td>ROLEX SKY-DWELLER<br>Materijal - Oystersteel<br>Narukvica - Oysterflex<br>Funkcije - Datumar<br>Mehanizam - Automatik<br>Cena - 4573439 RSD</td>
-		<td>ROLEX DAY-DATE 40<br>Materijal - Oystersteel<br>Narukvica - President<br>Funkcije - Datumar, dani u nedelji<br>Mehanizam - Automatik<br>Cena - 4338903 RSD</td>
-	</tr>
-	<tr class="tekstsatovi">
-		<td><img src="../images/rolex4.webp" class="slika" alt="rolex4"></td>
-		<td><img src="../images/rolex5.webp" class="slika" alt="rolex5"></td>
-		<td><img src="../images/rolex6.webp" class="slika" alt="rolex6"></td>
+		{% for rolexes in rolex %}
+			<td>Brand: {{ rolexes[1] }}</td>
+		{% endfor %}
 	</tr>
 	<tr>
-		<td>ROLEX SUBMARINER DATE<br>Materijal - Oystersteel<br>Narukvica - Oysterflex<br>Funkcije - Datumar<br>Mehanizam - Automatik<br>Cena - 4080915 RSD</td>
-		<td>ROLEX ROLEX DEEPSEA<br>Materijal - Oystersteel<br>Narukvica - Oysterflex<br>Funkcije - Datumar<br>Mehanizam - Automatik<br>Cena - 1424802 RSD</td>
-		<td>ROLEX COSMOGRAPH DAYTONA<br>Materijal - Oystersteel<br>Narukvica - Oysterflex<br>Funkcije - Datumar, hronograf<br>Mehanizam - Automatik<br>Cena - 3770155 RSD</td>
+		{% for rolexes in rolex %}
+			<td>Model: {{ rolexes[2] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Mechanism: {{ rolexes[3] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Case Material: {{ rolexes[4] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Strap Material: {{ rolexes[5] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Functions: {{ rolexes[6] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Glass Material: {{ rolexes[7] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Price: {{ rolexes[8] }}</td>
+		{% endfor %}
+	</tr>
+	<tr>
+		{% for rolexes in rolex %}
+			<td>Stock: {{ rolexes[9] }}</td>
+		{% endfor %}
 	</tr>
 </table>
 <div class="skorokraj">
@@ -104,7 +134,7 @@
 <footer>
 	<a href="#">
 		<div class="footer">
-			<img src="../images/strelica.png" alt="strelica">
+			<img src="{{ url_for('static', filename='images/strelica.png') }}" alt="strelica">
 		</div>
 	</a>
 </footer>

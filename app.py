@@ -1,5 +1,7 @@
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session, send_file
+from io import BytesIO
 import sqlite3
+import base64
 
 from werkzeug.security import generate_password_hash, check_password_hash
 from helpers import login_required
@@ -176,7 +178,17 @@ def roamer():
 @app.route('/rolex.html')
 @login_required
 def rolex():
-    return render_template('rolex.html')
+    connection = sqlite3.connect('databases.db')
+    cursor = connection.cursor()
+
+    statement = f"SELECT * FROM watches WHERE brand = 'ROLEX'"
+    cursor.execute(statement)
+    rolex = cursor.fetchall()
+    print(rolex[4][4])
+    img = rolex[0]
+    tuple = bytearray(str(img), 'utf-8')
+    encoded_image = base64.b64decode(tuple)
+    return render_template('rolex.html', encoded_image=encoded_image, rolex = rolex)
 
 @app.route('/seiko.html')
 @login_required
