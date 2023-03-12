@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
 <title>Brendovi</title>
 </head>
 <body>
 <nav class="nav-bar">
-	<div id="logo"><a href="index.html"><img src="../images/logo.png" alt="logo" height="75px" width="auto"></a></div>
+	<div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
 	<div id="levo">
 		<ul>
 			<a href="index.html"><li class="li">Početna</li></a>
@@ -41,9 +41,9 @@
 		</ul>
 	</div>
 	<div id="desno">
-		<a href=""><img src="../images/kolica.png" alt="shopping_cart" height="50px" width="auto"></a>
-		<a href=""><img src="../images/account.png" alt="account" height="50px" width="auto"></a>
-		<a href=""><img src="../images/logout.png" alt="logout" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/kolica.png') }}" alt="shopping_cart" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/account.png') }}" alt="account" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/logout.png') }}" alt="logout" height="50px" width="auto"></a>
 	</div>
 </nav>
 <div class="naslovbrendova">
@@ -54,22 +54,22 @@
 	
 	<table>
 		<tr>
-			<td><a href="seiko.html"><img src="../images/seiko_logo.png" width="250" height="auto"></a></td>
-			<td><a href="tissot.html"><img src="../images/tissot_logo.png" width="250" height="auto"></a></td>
-			<td><a href="festina.html"><img src="../images/festina_logo.png" width="250" height="auto"></a></td>
-			<td><a href="casio.html"><img src="../images/casio_logo.gif" width="250" height="auto"></a></td>
+			<td><a href="seiko.html"><img src="{{ url_for('static', filename='images/seiko_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="tissot.html"><img src="{{ url_for('static', filename='images/tissot_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="festina.html"><img src="{{ url_for('static', filename='images/festina_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="casio.html"><img src="{{ url_for('static', filename='images/casio_logo.gif') }}" width="250" height="auto"></a></td>
 		</tr>
 		<tr>
-			<td><a href="rolex.html"><img src="../images/rolex_logo.jpg" width="250" height="auto"></a></td>
-			<td><a href="diesel.html"><img src="../images/diesel_logo.png" width="250" height="auto"></a></td>
-			<td><a href="citizen.html"><img src="../images/citizen_logo.png" width="250" height="auto"></a></td>
-			<td><a href="swatch.html"><img src="../images/swatch_logo.png" width="250" height="auto"></a></td>
+			<td><a href="rolex.html"><img src="{{ url_for('static', filename='images/rolex_logo.jpg') }}" width="250" height="auto"></a></td>
+			<td><a href="diesel.html"><img src="{{ url_for('static', filename='images/diesel_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="citizen.html"><img src="{{ url_for('static', filename='images/citizen_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="swatch.html"><img src="{{ url_for('static', filename='images/swatch_logo.png') }}" width="250" height="auto"></a></td>
 		</tr>
 		<tr>
-			<td><a href="fossil.html"><img src="../images/fossil_logo.jpg" width="250" height="auto"></a></td>
-			<td><a href="klein.html"><img src="../images/klein_logo.jpg" width="250" height="auto"></a></td>
-			<td><a href="zenith.html"><img src="../images/zenith_logo.png" width="250" height="auto"></a></td>
-			<td><a href="roamer.html"><img src="../images/roamer_logo.png" width="250" height="auto"></a></td>
+			<td><a href="fossil.html"><img src="{{ url_for('static', filename='images/fossil_logo.jpg') }}" width="250" height="auto"></a></td>
+			<td><a href="klein.html"><img src="{{ url_for('static', filename='images/klein_logo.jpg') }}" width="250" height="auto"></a></td>
+			<td><a href="zenith.html"><img src="{{ url_for('static', filename='images/zenith_logo.png') }}" width="250" height="auto"></a></td>
+			<td><a href="roamer.html"><img src="{{ url_for('static', filename='images/roamer_logo.png') }}" width="250" height="auto"></a></td>
 		</tr>
 	</table>
 </div>	
@@ -83,7 +83,7 @@
 <footer>
 	<a href="#">
 		<div class="footer">
-			<img src="../images/strelica.png" alt="strelica">
+			<img src="{{ url_for('static', filename='images/strelica.png') }}" alt="strelica">
 		</div>
 	</a>
 </footer>

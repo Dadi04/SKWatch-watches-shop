@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../styles/styles.css">
-<title>SKWatch</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
+<title>Konakt</title>
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
@@ -14,7 +14,7 @@
 
 <body>
 <nav class="nav-bar">
-	<div id="logo"><a href="index.html"><img src="../images/logo.png" alt="logo" height="75px" width="auto"></a></div>
+	<div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
 	<div id="levo">
 		<ul>
 			<a href="index.html"><li class="li">Početna</li></a>
@@ -47,9 +47,9 @@
 		</ul>
 	</div>
 	<div id="desno">
-		<a href=""><img src="../images/kolica.png" alt="shopping_cart" height="50px" width="auto"></a>
-		<a href=""><img src="../images/account.png" alt="account" height="50px" width="auto"></a>
-		<a href=""><img src="../images/logout.png" alt="logout" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/kolica.png') }}" alt="shopping_cart" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/account.png') }}" alt="account" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/logout.png') }}" alt="logout" height="50px" width="auto"></a>
 	</div>
 </nav>
 <div class="kontakt">
@@ -103,7 +103,7 @@
 <footer>
 	<a href="#">
 		<div class="footer">
-			<img src="../images/strelica.png" alt="strelica">
+			<img src="{{ url_for('static', filename='images/strelica.png') }}" alt="strelica">
 		</div>
 	</a>
 </footer>

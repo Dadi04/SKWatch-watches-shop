@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
 <title>SKWatch</title>
 </head>
 <body>
 <nav class="nav-bar">
-	<div id="logo"><a href="index.html"><img src="../images/logo.png" alt="logo" height="75px" width="auto"></a></div>
+	<div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
 	<div id="levo">
 		<ul>
 			<a href="index.html"><li class="li">Početna</li></a>
@@ -41,29 +41,29 @@
 		</ul>
 	</div>
 	<div id="desno">
-		<a href=""><img src="../images/kolica.png" alt="shopping_cart" height="50px" width="auto"></a>
-		<a href=""><img src="../images/account.png" alt="account" height="50px" width="auto"></a>
-		<a href=""><img src="../images/logout.png" alt="logout" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/kolica.png') }}" alt="shopping_cart" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/account.png') }}" alt="account" height="50px" width="auto"></a>
+		<a href=""><img src="{{ url_for('static', filename='images/logout.png') }}" alt="logout" height="50px" width="auto"></a>
 	</div>
 </nav>
 <section class="zoom">
-	<img src="../images/mountain12.png" id="layer1" alt="mountain1">
-	<img src="../images/mountain2.png" id="layer2" alt="mountain2">
-	<img src="../images/text.png" id="text" alt="text">
+	<img src="{{ url_for('static', filename='images/mountain12.png') }}" id="layer1" alt="mountain1">
+	<img src="{{ url_for('static', filename='images/mountain2.png') }}" id="layer2" alt="mountain2">
+	<img src="{{ url_for('static', filename='images/text.png') }}" id="text" alt="text">
 </section>
 <section class="tekst_onama">
 	<div class="prva">
-		<img src="../images/onama1.jpg" alt="onama1" class="onama1">
+		<img src="{{ url_for('static', filename='images/onama1.jpg') }}" alt="onama1" class="onama1">
 		<p>Iznad svega SKWatch je priča o emocijama i posvećenosti, a svaka uspešna priča ima svoj početak. SKWatch je nastao 1990. godine kao rezultat jednog porodičnog sna i vizije da se luksuz učini dostupan svima. Da se od svakodnevice napravi svečanost i da se kreiraju trenuci za pamćenje. Veran ovim osnovnim idejama vodiljama SKWatch je u međuvremenu postao vodeća kompanija u Srbiji u oblasti prodaje satova i najveći specijalizovani maloprodajni lanac sa personalnim iskustvom u prvom planu.</p>
 	</div>
 	<div class="druga">
-		<img src="../images/onama2.jpg" alt="onama2" class="onama2">
+		<img src="{{ url_for('static', filename='images/onama2.jpg') }}" alt="onama2" class="onama2">
 		<h1>Mušterije na prvom mestu!</h1>
 		<p>Kolekcija ima mnogo kao i Vaših želja koje uvek nastojimo maksimalno da ispunimo našom profesionalnošću i iskrenošću. Iskreni stisak ruke, Vaš osmeh i ponovni susret, daju nam energiju da nastavimo ovim putem, i da budemo još bolji. Osluškujući neuhvatljivo vreme i Vaše želje, nastojimo da u kontinuitetu kvalitet naših usluga bude nenadmašiv. Ponosni smo na višegodišnju uspešnu saradnju sa vodećim svetskim kućama iz domena časovnicarstva i ponudom koju strastveno i predano biramo među najboljim internacionalnim brendovima, uvek vodeći računa da zadovoljimo sve ukuse i tipove kupaca, događaje, povode...</p>
 	</div>	
 	<div class="treca">
 		<p>Verujemo da je sat mnogo više od punog pokazivača vremena. Tačnije, više nego bilo koji predmet ili detalj, sat je odraz ličnog stava pojedinca.Na samo jednom mestu možete ne samo da odaberete sat za sebe ili Vama dragu osobu, već i da prilikom odabiranja ili neobaveznog razgledanja doživite sve estetske odlike uživanja u jednom umetničkom delu. Nadamo se da smo Vas uspeli zaintrigirati i približiti našem svetu. Uvek ste dobrodošli načiniti svoj prvi korak ili jedan među mnogima i sa nama krenuti u putovanje čarobnim svetom časovničarstva i juvelirstva.</p>
-		<img src="../images/o_nama.png" alt="onama" class="pozadinska">
+		<img src="{{ url_for('static', filename='images/o_nama.png') }}" alt="onama" class="pozadinska">
 		<h1>POSTANITE DEO NAŠEG TIMA</h1>
 		<p>Naši timovi su sastavljeni od pojedinaca koji dele zajedničku viziju: strast prema neiscrpnoj sferi satova i nakita, i koji su spremni da svakodnevno inspirišu svoje kolege, poslovne partnere i klijente. Pristupanjem u tim SKWatch, zapravo postajete član jedne velike porodice koja ima isti cilj: zajednički uspeh na osnovu ličnih dostignuća i posvećenosti. Svesni smo da je lični napredak pojedinca ključ uspeha naše kompanije, zato ulažemo u naš kadar svakodnevnim obukama i seminarima. Nagrađujemo posvećenost poslu, lična zalaganja i ostvarene rezultate. Posebnu pažnju posvećujemo održivom načinu vrednovanja koje podrazumeva stimulativno nagrađivanje prilikom ostvarivanja maksimalnih rezultata tima. Naša misija je da kontinuirano, svakim segmentom svog poslovanja opravdamo stečeno poverenje. Bez obzira da li ste početnik – pripravnik, učenik ili profesionalac, pružamo Vam prilagodljivu i stimulativnu poziciju u različitim oblastima. Podstičemo samoinicijativu i kreativnost, i zato tražimo saradnike koji teže izvanrednim rezultatima.</p>
 	</div>
@@ -110,7 +110,7 @@
 <footer>
 	<a href="#">
 		<div class="footer">
-			<img src="../images/strelica.png" alt="strelica">
+			<img src="{{ url_for('static', filename='images/strelica.png') }}" alt="strelica">
 		</div>
 	</a>
 </footer>
