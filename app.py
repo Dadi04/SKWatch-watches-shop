@@ -105,8 +105,15 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-
     return redirect("/")
+
+@app.route('/shopping_cart.html')
+def shopping_cart():
+    return render_template('shopping_cart.html')
+
+@app.route('/account.html')
+def account():
+    return render_template('account.html')
 
 @app.route('/login.html')
 def login2():

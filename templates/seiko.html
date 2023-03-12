@@ -8,7 +8,7 @@
 
 <body>
 <nav class="nav-bar">
-	<div id="logo"><a href="index.html"><img src="../images/logo.png" alt="logo" height="75px" width="auto"></a></div>
+	<div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
 	<div id="levo">
 		<ul>
 			<a href="index.html"><li class="li">Početna</li></a>
@@ -41,9 +41,9 @@
 		</ul>
 	</div>
 	<div id="desno">
-		<a href=""><img src="../images/kolica.png" alt="shopping_cart" height="50px" width="auto"></a>
-		<a href=""><img src="../images/account.png" alt="account" height="50px" width="auto"></a>
-		<a href=""><img src="../images/logout.png" alt="logout" height="50px" width="auto"></a>
+		<a href="shopping_cart.html"><img src="{{ url_for('static', filename='images/kolica.png') }}" alt="shopping_cart" height="50px" width="auto"></a>
+		<a href="account.html"><img src="{{ url_for('static', filename='images/account.png') }}" alt="account" height="50px" width="auto"></a>
+		<a href="logout"><img src="{{ url_for('static', filename='images/logout.png') }}" alt="logout" height="50px" width="auto"></a>
 	</div>
 </nav>
 <div class="sve">
