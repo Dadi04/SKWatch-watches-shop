@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
     <title>Register</title>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" height="75px" width="auto"></a></div>
+        <div id="login_desno">
+            <a href="register.html"><p>Register</p></a>
+            <a href="login.html"><p>Log In</p></a>
+        </div>
+    </nav>
     <center>
         <h1>Register Page</h1>
         <form action="" method="post">

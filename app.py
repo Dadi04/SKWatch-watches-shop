@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, session
 import sqlite3
 
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -55,11 +55,15 @@ def register():
 
         statement = f"SELECT * FROM users WHERE email='{email}' AND password='{hash}'"
         cursor.execute(statement)
-        if cursor.fetchone():
+        new_user = cursor.fetchone()
+        if new_user:
             return render_template("error.html")
         else:
-            if not cursor.fetchone():
+            if new_user:
                 cursor.execute("INSERT INTO users (name, surname, email, password, day_birth, month_birth, year_birth, starting_money) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (name, surname, email, hash, day, month, year, 100000))
+
+                session["user_id"] = new_user[0]
+
                 connection.commit()
                 connection.close()
             return redirect("/")
@@ -69,6 +73,9 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    session.clear()
+
     if request.method == 'POST':
         connection = sqlite3.connect('databases.db')
         cursor = connection.cursor()
@@ -85,12 +92,29 @@ def login():
         
         statement = f"SELECT * FROM users WHERE email = '{email}'"
         cursor.execute(statement)
-        if not cursor.fetchone() or not check_password_hash(statement[0]["hash"], password):
+        check = cursor.fetchone()
+        if not check or check_password_hash((check[4]), password) == False:
             return render_template("login.html")
-        else:
-            return redirect("/")
+
+        session["user_id"] = check[0]
+
+        return redirect("/")
     else:      
         return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+
+    return redirect("/")
+
+@app.route('/login.html')
+def login2():
+    return redirect('/login')
+
+@app.route('/register.html')
+def register2():
+    return redirect('/register')
 
 @app.route('/onama.html')
 @login_required
