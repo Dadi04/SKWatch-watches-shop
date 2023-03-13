@@ -1,9 +1,10 @@
 from flask import Flask, redirect, render_template, request, session, send_file
-from io import BytesIO
 import sqlite3
 import base64
-
+import io
 from werkzeug.security import generate_password_hash, check_password_hash
+from PIL import Image
+
 from helpers import login_required
 
 app = Flask(__name__)
@@ -184,12 +185,12 @@ def rolex():
     statement = f"SELECT * FROM watches WHERE brand = 'ROLEX'"
     cursor.execute(statement)
     rolex = cursor.fetchall()
-    print(rolex[4][4])
-    img = rolex[0]
-    tuple = bytearray(str(img), 'utf-8')
-    encoded_image = base64.b64decode(tuple)
-    return render_template('rolex.html', encoded_image=encoded_image, rolex = rolex)
-
+    img = rolex[:1]
+    binary_data = base64.b64encode(bytearray(str(img), 'utf-8'))
+    random = Image.open(io.BytesIO(binary_data))
+    return render_template('rolex.html', rolex = rolex, random = random)
+    """doesn't work fucking shit"""
+    
 @app.route('/seiko.html')
 @login_required
 def seiko():
