@@ -9,7 +9,6 @@ functions TEXT NOT NULL,
 glass TEXT NOT NULL, 
 price REAL NOT NULL, 
 in_stock INTEGER NOT NULL,
-image BLOB;
 );
 
 CREATE TABLE users(
@@ -39,6 +38,6 @@ FOREIGN KEY(watch_id) REFERENCES watches(id)
 
 SELECT * FROM watches;
 
-SELECT * FROM watches WHERE brand = "ROLEX";
-
 SELECT * FROM users;
+
+SELECT * FROM transactions;

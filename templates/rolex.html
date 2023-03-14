@@ -7,9 +7,14 @@
 {% block table %}
 	<table class="satovi">
 		<tr>
-			{% for rolexes in rolex %}
-				<td><img src="data:images/png;base64,{{ binary_data }}" alt="" >{{ rolexes[10] }}</td>
-			{% endfor %}
+			<td><img src="{{ url_for('static', filename='images/rolex1.webp') }}" alt="rolex1" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex2.webp') }}" alt="rolex2" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex3.webp') }}" alt="rolex3" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex4.webp') }}" alt="rolex4" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex5.webp') }}" alt="rolex5" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex6.webp') }}" alt="rolex6" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex7.webp') }}" alt="rolex7" ></td>
+			<td><img src="{{ url_for('static', filename='images/rolex8.webp') }}" alt="rolex8" ></td>
 		</tr>
 		<tr>
 			{% for rolexes in rolex %}
@@ -51,15 +56,22 @@
 				<td>Price: {{ rolexes[8] }}</td>
 			{% endfor %}
 		</tr>
-		<tr >
+		<tr>
 			{% for rolexes in rolex %}
 				<td>Stock: {{ rolexes[9] }}</td>
 			{% endfor %}
 		</tr>
 		<tr>
-			{% for rolexes in rolex %}
-				<td><button type="button">Buy</button></td>
-			{% endfor %}
+			<form action="/shopping_cart" method="post">
+				{% for i in rolex %}
+					<td>
+						<input type="hidden" name="product_id" value="{{ i[0] }}">
+						<input type="submit" name="product_id" value="Add to shopping cart">
+						<label for="quantity">Quantity</label>
+						<input type="number" name="quantity" value="1" min="1" max="{{ i[9] }}">
+					</td>
+				{% endfor %}
+			</form>
 		</tr>
 	</table>
 {% endblock %}

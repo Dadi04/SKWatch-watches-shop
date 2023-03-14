@@ -101,6 +101,9 @@ def login():
 
         session["user_id"] = check[0]
 
+        connection.commit()
+        connection.close()
+
         return redirect("/")
     else:      
         return render_template('login.html')
@@ -110,9 +113,55 @@ def logout():
     session.clear()
     return redirect("/")
 
-@app.route('/shopping_cart.html')
+@app.route('/shopping_cart', methods=['GET', 'POST'])
 def shopping_cart():
-    return render_template('shopping_cart.html')
+    user_id = session["user_id"]
+    
+    
+    if request.method == "POST":
+        connection = sqlite3.connect('databases.db')
+        cursor = connection.cursor()
+
+        product_id = request.form.get('product_id')
+        quantity = int(request.form.get('quantity'))
+
+        print(product_id)
+        # get the current cash of the user
+        starting_money = f"SELECT starting_money FROM users WHERE id = {user_id}"
+        cursor.execute(starting_money)
+        cash = cursor.fetchone()[0]
+
+
+        # get the item price and if its in stock
+        statement = f"SELECT * FROM watches WHERE id = {product_id}"
+        cursor.execute(statement)
+        item_properties = cursor.fetchone()
+
+        # for price
+        item_price = int(item_properties[8])
+        # for stock
+        item_stock = item_properties[9]
+        
+
+        # total money user has to pay
+        total = item_price * quantity
+        print(item_price, item_stock, quantity, cash, total)
+        # if statements
+        if (cash < total) or (item_stock < quantity):
+            return render_template("error.html")
+        else:
+            cursor.execute("UPDATE users SET starting_money = ? WHERE id = ?", (cash - total, user_id))
+            cursor.execute("INSERT INTO transactions (user_id, watch_id, amount, price, type, total_price) VALUES (?, ?, ?, ?, ?, ?)", (user_id, product_id, quantity, item_price, 'buy', total))
+            connection.commit()
+            connection.close()
+
+        return render_template('shopping_cart.html')
+    else:
+        return render_template('shopping_cart.html')
+
+@app.route('/shopping_cart.html')
+def shopping_cart2():
+    return redirect('/shopping_cart')
 
 @app.route('/account.html')
 def account():
@@ -185,11 +234,8 @@ def rolex():
     statement = f"SELECT * FROM watches WHERE brand = 'ROLEX'"
     cursor.execute(statement)
     rolex = cursor.fetchall()
-    img = rolex[:1]
-    binary_data = base64.b64encode(bytearray(str(img), 'utf-8'))
-    random = Image.open(io.BytesIO(binary_data))
-    return render_template('rolex.html', rolex = rolex, random = random)
-    """doesn't work fucking shit"""
+
+    return render_template('rolex.html', rolex = rolex)
     
 @app.route('/seiko.html')
 @login_required

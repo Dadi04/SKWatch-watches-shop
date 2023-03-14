@@ -166,11 +166,14 @@
 	.satovi {
 		margin-left: 200px;
 		padding: 10px 150px;
+		width: 900px;
 	}
 	.satovi tr td {
 		text-align: center;
 		color: #FFFFFF;
 		line-height: 130%;
+		width: 335px;
+		margin-top: 10px;
 	}
 	.satovi tr td img {
 		width: 335px;
